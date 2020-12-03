@@ -1,6 +1,6 @@
 passwords = []
-with open('input.txt', 'r') as f: # Read in the data as a list of ints
-        passwords = [(i) for i in f.read().splitlines()]
+with open('input.txt', 'r') as f:
+    passwords = [(i) for i in f.read().splitlines()]
 
 correctPasswordCount = 0
 
@@ -15,10 +15,9 @@ for x in passwords:
     endingRange = int(letterRange[1])
 
     counter = password.count(letter)
-    print("there are ", counter, letter, "in ", password)
 
-    for i in range(beginningRange, endingRange):
+    for i in range(beginningRange, endingRange + 1):
         if i == counter:
             correctPasswordCount += 1
 
-# print(correctPasswordCount, len(passwords))
+print(correctPasswordCount, len(passwords))
